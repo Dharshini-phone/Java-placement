@@ -1,0 +1,255 @@
+DAY-2(Task-1)
+ ElectricityBill
+import java.util.Scanner;
+public class ElectricityBill {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of units consumed: ");
+        int units = sc.nextInt();
+        double bill = 0;
+        if (units <= 100) {
+            bill = units * 5;
+        } else if (units <= 300) {
+            bill = (100 * 5) + ((units - 100) * 7);
+        } else {
+            bill = (100 * 5) + (200 * 7) + ((units - 300) * 10);
+        }
+        if (bill > 2000) {
+            bill = bill + (bill * 0.10);
+        }
+        System.out.println("\nTotal Electricity Bill: ₹" + bill);
+        sc.close();
+    }
+}
+
+DAY-2(Task-2)
+StudentGradeSystem
+import java.util.Scanner;
+public class StudentGradeSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double total = 0;
+        int subjects = 5;
+        System.out.println("Enter marks for 5 subjects (out of 100):");
+        for (int i = 1; i <= subjects; i++) {
+            System.out.print("Subject " + i + ": ");
+            double marks = sc.nextDouble();
+            total += marks;
+        }
+        double average = total / subjects;
+        String grade;
+        if (average >= 90) {
+            grade = "A+";
+        } else if (average >= 80) {
+            grade = "A";
+        } else if (average >= 70) {
+            grade = "B";
+        } else if (average >= 60) {
+            grade = "C";
+        } else {
+            grade = "Fail";
+        }
+        System.out.println("\nStudent Result");
+        System.out.println("Total Marks  : " + total);
+        System.out.println("Average Marks: " + average);
+        System.out.println("Grade        : " + grade);
+        sc.close();
+    }
+}
+
+DAY-2(Task-3)
+EmployeeBonus
+import java.util.Scanner;
+public class EmployeeBonus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter employee name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter basic salary: ₹");
+        double salary = sc.nextDouble();
+        System.out.print("Enter years of experience: ");
+        int experience = sc.nextInt();
+        double bonusPercentage;
+        if (experience > 5) {
+            bonusPercentage = 15;
+        } else if (experience >= 3) {
+            bonusPercentage = 10;
+        } else {
+            bonusPercentage = 5;
+        }
+        double bonus = salary * bonusPercentage / 100;
+        double totalSalary = salary + bonus;
+        System.out.println("\n--- Employee Bonus Details ---");
+        System.out.println("Employee Name : " + name);
+        System.out.println("Basic Salary  : ₹" + salary);
+        System.out.println("Experience    : " + experience + " years");
+        System.out.println("Bonus (%)     : " + bonusPercentage + "%");
+        System.out.println("Bonus Amount  : ₹" + bonus);
+        System.out.println("Total Salary  : ₹" + totalSalary);
+        sc.close();
+    }
+}
+
+DAY-2(Task-9)
+EvenOdd
+import java.util.Scanner;
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        if (num % 2 == 0) {
+            System.out.println(num + " is Even");
+        } else {
+            System.out.println(num + " is Odd");
+        }
+        sc.close();
+    }
+}
+
+DAY-2(Task-4)
+ATMWithdrawal
+import java.util.Scanner;
+public class ATMWithdrawal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your current balance: ₹");
+        double balance = sc.nextDouble();
+        System.out.print("Enter withdrawal amount: ₹");
+        double withdraw = sc.nextDouble();
+        if (withdraw <= balance) {
+            balance -= withdraw;
+            System.out.println("Withdrawal successful. Remaining balance: ₹" + balance);
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+        sc.close();
+    }
+}
+
+DAY-2(Task-5)
+ShoppingDiscount
+import java.util.Scanner;
+public class ShoppingDiscount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total shopping amount: ₹");
+        double amount = sc.nextDouble();
+        double discount = 0;
+        if (amount > 5000) {
+            discount = 20;
+        } else if (amount > 2000) {
+            discount = 10;
+        }
+        double finalAmount = amount - (amount * discount / 100);
+        System.out.println("Discount applied: " + discount + "%");
+        System.out.println("Amount to pay: ₹" + finalAmount);
+        sc.close();
+    }
+}
+
+DAY-2(Task-6)
+TrafficLight
+import java.util.Scanner;
+public class TrafficLight {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter traffic light color (Red/Yellow/Green): ");
+        String color = sc.nextLine().toLowerCase();
+        switch (color) {
+            case "red":
+                System.out.println("Stop");
+                break;
+            case "yellow":
+                System.out.println("Get Ready / Caution");
+                break;
+            case "green":
+                System.out.println("Go");
+                break;
+            default:
+                System.out.println("Invalid color");
+        }
+        sc.close();
+    }
+}
+
+DAY-2(Task-7)
+SimpleCalculator
+import java.util.Scanner;
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        System.out.print("Enter operator (+, -, *, /): ");
+        char operator = sc.next().charAt(0);
+        double result;
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0)
+                    result = num1 / num2;
+                else {
+                    System.out.println("Cannot divide by zero");
+                    sc.close();
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Invalid operator");
+                sc.close();
+                return;
+        }
+        System.out.println("Result: " + result);
+        sc.close();
+    }
+}
+
+DAY-2(Task-8)
+Rectangle
+import java.util.Scanner;
+public class Rectangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter length of rectangle: ");
+        double length = sc.nextDouble();
+        System.out.print("Enter width of rectangle: ");
+        double width = sc.nextDouble();
+        double area = length * width;
+        double perimeter = 2 * (length + width);
+        System.out.println("Area of rectangle: " + area);
+        System.out.println("Perimeter of rectangle: " + perimeter);
+
+        sc.close();
+    }
+}
+
+
+DAY-2(Task-10)
+LeapYear
+import java.util.Scanner;
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a Leap Year");
+        } else {
+            System.out.println(year + " is not a Leap Year");
+        }
+        sc.close();
+    }
+}
+
+
