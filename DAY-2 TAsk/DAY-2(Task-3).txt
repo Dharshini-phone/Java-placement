@@ -1,0 +1,33 @@
+DAY-2(Task-3)
+EmployeeBonus
+import java.util.Scanner;
+public class EmployeeBonus {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter employee name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter basic salary: ₹");
+        double salary = sc.nextDouble();
+        System.out.print("Enter years of experience: ");
+        int experience = sc.nextInt();
+        double bonusPercentage;
+        if (experience > 5) {
+            bonusPercentage = 15;
+        } else if (experience >= 3) {
+            bonusPercentage = 10;
+        } else {
+            bonusPercentage = 5;
+        }
+        double bonus = salary * bonusPercentage / 100;
+        double totalSalary = salary + bonus;
+        System.out.println("\n--- Employee Bonus Details ---");
+        System.out.println("Employee Name : " + name);
+        System.out.println("Basic Salary  : ₹" + salary);
+        System.out.println("Experience    : " + experience + " years");
+        System.out.println("Bonus (%)     : " + bonusPercentage + "%");
+        System.out.println("Bonus Amount  : ₹" + bonus);
+        System.out.println("Total Salary  : ₹" + totalSalary);
+        sc.close();
+    }
+}
+

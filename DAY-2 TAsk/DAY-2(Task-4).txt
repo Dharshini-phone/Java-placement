@@ -1,0 +1,19 @@
+DAY-2(Task-4)
+ATMWithdrawal
+import java.util.Scanner;
+public class ATMWithdrawal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your current balance: ₹");
+        double balance = sc.nextDouble();
+        System.out.print("Enter withdrawal amount: ₹");
+        double withdraw = sc.nextDouble();
+        if (withdraw <= balance) {
+            balance -= withdraw;
+            System.out.println("Withdrawal successful. Remaining balance: ₹" + balance);
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+        sc.close();
+    }
+}
