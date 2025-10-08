@@ -1,0 +1,11 @@
+DAY-3(Task-1)
+Print even num from 5 to 55
+public class Evennum {
+    public static void main(String[] args) {
+        for(int i=5;i<=55;i++){
+            if (i % 2==0){
+            System.out.println(i);
+        }
+    }
+    }
+}

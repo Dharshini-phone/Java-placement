@@ -1,0 +1,26 @@
+DAY-3(Task-3)
+Password Retry System
+import java.util.Scanner;
+public class Main
+{
+ 	public static void main(String[] args) {
+ 	    Scanner sc = new Scanner (System.in);
+ 	    String crtpassword = "dhars";
+ 	    int attempts = 0;
+ 	    while (attempts <=3){
+ 	         System.out.println("Enter you password : ");
+ 	        String userpassword  = sc.nextLine();
+ 	        if(userpassword.equals(crtpassword)){
+ 	            System.out.println("your password is correct ");
+ 	            break;
+ 	        }
+ 	        else{
+ 	            System.out.println("Invalid try again ");
+ 	            attempts++;
+ 	        }
+ 	    }
+ 	        if (attempts > 3) {
+            System.out.println("Too many attempt. Access denied.");
+ 	        }
+ 	}
+}
