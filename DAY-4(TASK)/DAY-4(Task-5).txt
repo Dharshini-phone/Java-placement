@@ -1,0 +1,25 @@
+DAY-4(Task-5)
+import java.util.*;
+public class AnagramCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first string: ");
+        String str1 = sc.nextLine();
+        System.out.print("Enter second string: ");
+        String str2 = sc.nextLine();
+        if (areAnagrams(str1, str2))
+            System.out.println("The strings are anagrams.");
+        else
+            System.out.println("The strings are NOT anagrams.");
+    }
+    static boolean areAnagrams(String a, String b) {
+        a = a.replaceAll("\\s", "").toLowerCase();
+        b = b.replaceAll("\\s", "").toLowerCase();
+        if (a.length() != b.length()) return false;
+        char[] arr1 = a.toCharArray();
+        char[] arr2 = b.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        return Arrays.equals(arr1, arr2);
+    }
+}

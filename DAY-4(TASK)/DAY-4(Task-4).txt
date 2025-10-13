@@ -1,0 +1,25 @@
+DAY-4(Task-4)
+import java.util.*;
+public class DuplicateCharacters {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        Map<Character, Integer> count = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            if (c != ' ')
+                count.put(c, count.getOrDefault(c, 0) + 1);
+        }
+        System.out.println("Duplicate characters:");
+        boolean hasDuplicate = false;
+        for (var e : count.entrySet()) {
+            if (e.getValue() > 1) {
+                System.out.println(e.getKey() + " → " + e.getValue() + " times");
+                hasDuplicate = true;
+            }
+        }
+
+        if (!hasDuplicate)
+            System.out.println("No duplicates found.");
+    }
+}
